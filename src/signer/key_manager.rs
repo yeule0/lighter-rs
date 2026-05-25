@@ -2,10 +2,16 @@ use crate::curve::scalar::Scalar;
 use crate::field::quintic::Fp5;
 use crate::hash::poseidon2;
 use crate::signature::schnorr;
+use zeroize::Zeroize;
 
-/// KeyManager holds a private key and provides signing + public key derivation.
 pub struct KeyManager {
     secret_key: Scalar,
+}
+
+impl Drop for KeyManager {
+    fn drop(&mut self) {
+        self.secret_key.0.zeroize();
+    }
 }
 
 impl KeyManager {
