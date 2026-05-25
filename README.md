@@ -61,8 +61,6 @@ cargo run --release --bin batch_orders
 
 Replace the four `const` values at the top of each script with your own.
 
-```
-
 ## What's inside
 
 The library is organised in layers, each building on the one below it:
@@ -126,4 +124,4 @@ and `Validate()` methods that match the Go reference.
 
 ## License
 
-MIT [LICENSE](LICENSE).
+[MIT](LICENSE)
